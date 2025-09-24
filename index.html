@@ -1,1 +1,110 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <title>Tin nhắn cho em</title>
+  <style>
+    body {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      background: #fdfdfd;
+      font-family: "Segoe UI", sans-serif;
+      padding: 20px;
+      text-align: center;
+    }
+    #messageBox {
+      max-width: 600px;
+      background: white;
+      padding: 30px;
+      border-radius: 16px;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+    }
+    #text {
+      font-size: 18px;
+      line-height: 1.6;
+      margin-bottom: 20px;
+      white-space: pre-line;
+      min-height: 80px;
+    }
+    button {
+      background: #ff6b6b;
+      color: white;
+      border: none;
+      padding: 10px 20px;
+      border-radius: 8px;
+      font-size: 16px;
+      cursor: pointer;
+      transition: 0.2s;
+    }
+    button:hover {
+      background: #ff4757;
+    }
+    #tinyLink {
+      position: fixed;
+      bottom: 10px;
+      left: 10px;
+      font-size: 10px;
+      opacity: 0.5;
+    }
+    #tinyLink a {
+      text-decoration: none;
+      color: #444;
+    }
+  </style>
+</head>
+<body>
+  <div id="messageBox">
+    <div id="text"></div>
+    <button id="nextBtn">Tiếp tục</button>
+  </div>
+
+  <div id="tinyLink">
+    <a href="#">nếu em còn muốn tớ ở lại thì nhấn vào đây</a>
+  </div>
+
+  <script>
+    const messages = [
+      "hi baby,",
+      "từ từ, đừng thoát ra, em nghe tớ nói đã.",
+      "tớ cũng tệ thật, làm em buồn nhiều quá.",
+      "nói chuyện thì không tinh tế, cũng chẳng biết cách dỗ dành em.",
+      "lần nào cũng chỉ biết nói xin lỗi, lại còn không thể gặp em thường xuyên nữa.",
+      "chắc hẳn ở bên tớ em cảm thấy tủi thân nhiều lắm.",
+      "",
+      "thôi thì, lần này tớ lại xin lỗi vậy.",
+      "tớ không biết mình nên rời đi hay là nên ở lại.",
+      "tớ còn yêu em lắm, nhưng mà, tớ sợ rằng, nếu tớ ở lại sẽ làm em buồn thêm.",
+      "nhưng tớ cũng chẳng muốn rời đi, thì đâu có ai muốn từ bỏ người mình yêu đâu, nhỉ?",
+      "",
+      "mỗi lần em dỗi tớ, tớ lại nghĩ đến lúc em cười.",
+      "em cười xinh lắm, nhìn mà muốn nựng mấy cái luôn.",
+      "tớ cảm ơn em vì đã bao dung với tớ, bao dung cho sự thô kệch, thiếu tinh tế của tớ.",
+      "tớ cảm ơn em nhiều lắm.",
+      "",
+      "nhìn thấy em mệt mỏi như vậy, tớ cũng không nỡ ở lại để làm khổ em thêm.",
+      "bông hoa nhỏ của tớ đáng yêu lắm, hãy cười thật nhiều, phải vui hơn nhé.",
+      "tớ cảm ơn em vì tất cả mọi thứ em đã làm cho tớ.",
+      "bạn nhỏ yên tâm, tớ sẽ không khóc đâu.",
+      "chúc em sau này luôn vui vẻ, hạnh phúc với lựa chọn của bản thân nhé.",
+      "anh yêu em."
+    ];
+
+    let index = 0;
+    const textEl = document.getElementById("text");
+    const nextBtn = document.getElementById("nextBtn");
+
+    nextBtn.addEventListener("click", () => {
+      if (index < messages.length) {
+        textEl.textContent = messages[index];
+        index++;
+      } else {
+        textEl.textContent = "Hết rồi... ❤️";
+        nextBtn.style.display = "none";
+      }
+    });
+  </script>
+</body>
+</html>
 
